@@ -2,10 +2,9 @@
 name: CI
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
+    types:
+      - submitted
 
 jobs:
   pipeline:
@@ -15,3 +14,4 @@ jobs:
         run: |
                 IMAGE="${GITHUB_SHA::8}"
                 echo $IMAGE
+                echo "Hola"
